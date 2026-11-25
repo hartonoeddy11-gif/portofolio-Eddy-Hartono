@@ -1,0 +1,1932 @@
+<!-- ... existing code ... -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eddy Hartono — Digital Content Creator, Agribusiness Analyst &amp; Operational Specialist</title>
+    <meta name="description" content="Portofolio profesional Eddy Hartono (Pangkep, Sulawesi Selatan). Digital Content Creator, Agribusiness Analyst & Operational Specialist — Balai K3 Makassar, BBPVP Makassar, UMKM Meng Ball, dan D4 Agribisnis Perikanan.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pearlWhite: '#F8F9FA',     // Background Utama
+                        abyssalNavy: '#0A192F',    // Dark Section / Header
+                        deepSlate: '#172A45',      // Warna Sekunder (Card, Border, Sub-bagian)
+                        champagneGold: '#C5A059',  // Aksen Mewah (CTA, Garis Bawah, Ikon Metrik)
+                        charcoalInk: '#1E293B',    // Teks Utama di atas latar terang
+                    },
+                    fontFamily: {
+                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serifAccent: ['"Playfair Display"', 'serif'],
+                        body: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS untuk animasi halus & efek visual -->
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8F9FA;
+            color: #1E293B;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .font-editorial {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Glassmorphism Navbar Abyssal Navy */
+        .glass-nav {
+            background: rgba(10, 25, 47, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Animasi kartu karya & keahlian */
+        .project-card, .skill-card {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .project-card:hover, .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: #C5A059;
+        }
+        /* Modal animation */
+        .modal-backdrop {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+        }
+        /* Pattern latar belakang hero */
+        .hero-grid-pattern {
+            background-image: radial-gradient(rgba(197, 160, 89, 0.12) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-champagneGold selection:text-abyssalNavy overflow-x-hidden">
+
+    <!-- 1. STICKY NAVIGATION BAR (Abyssal Navy + Champagne Gold CTA) -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-nav border-b border-deepSlate">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo Inisial -->
+                <a href="#" class="flex items-center gap-2.5 group">
+                    <span class="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+                        EH<span class="text-champagneGold">.</span>
+                    </span>
+                    <span class="hidden sm:inline-block text-xs font-medium text-slate-300 border-l border-deepSlate pl-2.5">
+                        Eddy Hartono
+                    </span>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center gap-7">
+                    <a href="#tentang" class="text-sm font-medium text-slate-200 hover:text-champagneGold transition-colors">Profil</a>
+                    <a href="#keahlian" class="text-sm font-medium text-slate-200 hover:text-champagneGold transition-colors">Hard &amp; Soft Skills</a>
+                    <a href="#karya" class="text-sm font-medium text-slate-200 hover:text-champagneGold transition-colors">Studi Kasus</a>
+                    <a href="#pengalaman" class="text-sm font-medium text-slate-200 hover:text-champagneGold transition-colors">Pengalaman</a>
+                    <a href="#kontak" class="text-sm font-medium text-slate-200 hover:text-champagneGold transition-colors">Kontak</a>
+                </nav>
+
+                <!-- CTA & Mobile Toggle -->
+                <div class="flex items-center gap-3">
+                    <a href="#kontak" class="inline-flex items-center justify-center px-4 py-2.5 text-sm font-bold text-abyssalNavy bg-champagneGold hover:brightness-110 rounded-xl shadow-lg shadow-champagneGold/20 transition-all active:scale-95">
+                        Hubungi Saya
+                    </a>
+                    <!-- Mobile Hamburger Button -->
+                    <button id="mobile-menu-btn" aria-label="Buka Menu" class="md:hidden p-2.5 rounded-xl text-slate-200 hover:text-champagneGold hover:bg-deepSlate transition-colors">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-abyssalNavy border-b border-deepSlate px-4 pt-2 pb-5 space-y-1">
+            <a href="#tentang" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-deepSlate hover:text-champagneGold">Profil &amp; Latar Belakang</a>
+            <a href="#keahlian" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-deepSlate hover:text-champagneGold">Hard Skills &amp; Soft Skills</a>
+            <a href="#karya" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-deepSlate hover:text-champagneGold">Studi Kasus Utama</a>
+            <a href="#pengalaman" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-deepSlate hover:text-champagneGold">Pengalaman &amp; Pendidikan</a>
+            <a href="#kontak" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-deepSlate hover:text-champagneGold">Kontak &amp; Kolaborasi</a>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION (Abyssal Navy #0A192F + Deep Slate Blue #172A45 + Champagne Gold #C5A059) -->
+    <section class="relative bg-abyssalNavy text-white pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden hero-grid-pattern">
+        <!-- Cahaya Aksen Emas Halus -->
+        <div class="absolute top-24 -left-24 w-80 h-80 bg-champagneGold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-0 w-96 h-96 bg-deepSlate/80 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Kolom Kiri: Identitas, Peran & CTA -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Badge Status & Domisili -->
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-deepSlate border border-champagneGold/40 text-xs sm:text-sm font-medium text-champagneGold">
+                            <span class="relative flex h-2.5 w-2.5">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-champagneGold opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-champagneGold"></span>
+                            </span>
+                            Siap untuk Peluang Full-Time &amp; Proyek Strategis
+                        </div>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-abyssalNavy/90 border border-deepSlate text-xs sm:text-sm font-medium text-slate-200">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-champagneGold"></i>
+                            <span>Pangkep, Sulawesi Selatan</span>
+                        </div>
+                    </div>
+
+                    <!-- Nama & Peran Profesional -->
+                    <div class="space-y-3">
+                        <p class="font-editorial italic text-champagneGold tracking-wide text-base sm:text-lg">
+                            Portofolio Profesional &amp; Rekam Jejak Karya
+                        </p>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                            Eddy Hartono
+                        </h1>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-200 leading-snug">
+                            Digital Content Creator, <span class="text-champagneGold">Agribusiness Analyst &amp; Operational Specialist</span>
+                        </h2>
+                        <div class="w-20 h-1 bg-champagneGold rounded-full"></div>
+                    </div>
+
+                    <!-- Ringkasan Nilai Utama -->
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        Menjembatani produksi konten digital berbasis Generative AI, komunikasi publik instansi, tata kelola kesekretariatan organisasi, dan otomasi web dengan ketajaman analisis finansial maupun operasional agribisnis untuk menghasilkan dampak terukur.
+                    </p>
+
+                    <!-- Dua Tombol Aksi -->
+                    <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
+                        <a href="#karya" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-champagneGold hover:brightness-110 text-abyssalNavy font-bold text-sm sm:text-base shadow-lg shadow-champagneGold/20 transition-all active:scale-95">
+                            <span>Jelajahi Studi Kasus</span>
+                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#kontak" class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-deepSlate hover:bg-deepSlate/80 text-white border border-champagneGold/30 hover:border-champagneGold font-semibold text-sm sm:text-base transition-all active:scale-95">
+                            <span>Diskusi &amp; Kolaborasi</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Kartu Metrik Pencapaian (Deep Slate Blue + Champagne Gold Icons) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-deepSlate border border-champagneGold/30 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                        <div class="flex items-center justify-between border-b border-abyssalNavy/60 pb-4 mb-5">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-champagneGold">Sorotan Kredibilitas</span>
+                                <h3 class="text-lg sm:text-xl font-bold text-white mt-0.5">Metrik &amp; Pencapaian Utama</h3>
+                            </div>
+                            <div class="w-10 h-10 rounded-xl bg-abyssalNavy border border-champagneGold/50 flex items-center justify-center text-champagneGold">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3.5">
+                            <!-- Metrik 1: Magang Hub 6 Bulan -->
+                            <div class="p-3.5 rounded-xl bg-abyssalNavy/70 border border-champagneGold/20 hover:border-champagneGold/60 transition-colors flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-lg bg-champagneGold/15 text-champagneGold flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Magang Hub 6 Bulan — Balai K3 Makassar</h4>
+                                    <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">Content Creator untuk perencanaan konten K3, kampanye edukasi visual kreatif &amp; komunikasi publik instansi.</p>
+                                </div>
+                            </div>
+
+                            <!-- Metrik 2: BBPVP Makassar OJT -->
+                            <div class="p-3.5 rounded-xl bg-abyssalNavy/70 border border-champagneGold/20 hover:border-champagneGold/60 transition-colors flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-lg bg-champagneGold/15 text-champagneGold flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">OJT Program BBPVP Makassar</h4>
+                                    <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">Pelatihan Vokasi Pengoperasian Generative AI untuk produksi konten digital, audio/voiceover, dan bisnis.</p>
+                                </div>
+                            </div>
+
+                            <!-- Metrik 3: Lulusan D4 & BNSP -->
+                            <div class="p-3.5 rounded-xl bg-abyssalNavy/70 border border-champagneGold/20 hover:border-champagneGold/60 transition-colors flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-lg bg-champagneGold/15 text-champagneGold flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="badge-check" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Lulusan D4 (2026) &amp; BNSP Certified</h4>
+                                    <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">Sarjana Terapan Agribisnis Perikanan Politani Pangkep serta Sertifikasi Kompetensi BNSP Ekspor-Impor.</p>
+                                </div>
+                            </div>
+
+                            <!-- Metrik 4: UMKM Meng Ball -->
+                            <div class="p-3.5 rounded-xl bg-abyssalNavy/70 border border-champagneGold/20 hover:border-champagneGold/60 transition-colors flex items-start gap-3.5">
+                                <div class="w-9 h-9 rounded-lg bg-champagneGold/15 text-champagneGold flex items-center justify-center shrink-0 mt-0.5">
+                                    <i data-lucide="rocket" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Founder UMKM Meng Ball</h4>
+                                    <p class="text-xs text-slate-300 mt-0.5 leading-relaxed">Identitas merek motif Boledong Pangkep, website mengball.my.id, serta otomasi order n8n &amp; Google Sheets.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-t border-abyssalNavy/60 flex items-center justify-between text-xs text-slate-300">
+                            <span class="inline-flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-champagneGold"></i>Pangkep, Sulawesi Selatan</span>
+                            <span class="text-champagneGold font-semibold">Portofolio Terverifikasi</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. BAGIAN PROFIL & RINGKASAN LATAR BELAKANG (Pearl Off-White #F8F9FA + Charcoal Ink #1E293B) -->
+    <section id="tentang" class="pt-20 pb-14 sm:pt-28 sm:pb-16 bg-pearlWhite text-charcoalInk">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pb-14 border-b border-deepSlate/15">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-champagneGold">Tentang Saya</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-abyssalNavy leading-tight">
+                        Perpaduan Kreativitas Visual, Tata Kelola &amp; Analisis Bisnis
+                    </h2>
+                    <div class="w-16 h-1 bg-champagneGold rounded-full"></div>
+                    <div class="pt-2 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-deepSlate/15 text-xs font-semibold text-abyssalNavy shadow-xs">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-champagneGold"></i>
+                            Pangkep, Sulawesi Selatan
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-deepSlate/15 text-xs font-semibold text-abyssalNavy shadow-xs">
+                            <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-champagneGold"></i>
+                            D4 Agribisnis Perikanan (2026)
+                        </span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-4 text-charcoalInk text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Saya adalah lulusan <strong>D4 Agribisnis Perikanan Politeknik Pertanian Negeri Pangkajene Kepulauan (Politani Pangkep, Lulus 2026)</strong> yang berdomisili di <strong>Pangkep, Sulawesi Selatan</strong>, dengan fokus pada strategi konten digital, analisis kelayakan agribisnis, tata kelola kesekretariatan, dan otomasi operasional berbasis teknologi.
+                    </p>
+                    <p>
+                        Pengalaman saya ditempa melalui peran sebagai <strong>Content Creator pada Program Magang Hub (6 Bulan) di Balai K3 Makassar</strong>, pelatihan vokasi &amp; OJT pengoperasian Generative AI pada <strong>Program BBPVP Makassar</strong>, kepengurusan di <strong>Himpunan Mahasiswa Bisnis (Bidang Kesekretariatan)</strong>, <strong>Racana Kastratara</strong>, dan <strong>FKMPI</strong>, serta sertifikasi kompetensi nasional <strong>BNSP</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. BAGIAN HARDSKILLS DENGAN VISUAL / GAMBAR & SOFTSKILLS RELEVAN -->
+    <section id="keahlian" class="pt-6 pb-20 sm:pb-28 bg-pearlWhite text-charcoalInk">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+
+            <!-- 4A. KEAHLIAN TEKNIS (HARD SKILLS) DENGAN GAMBAR -->
+            <div>
+                <div class="max-w-3xl mb-10">
+                    <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-champagneGold">Kompetensi Terapan</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-abyssalNavy mt-2">
+                        Keahlian Teknis (Hard Skills)
+                    </h2>
+                    <div class="w-16 h-1 bg-champagneGold rounded-full mt-3"></div>
+                    <p class="text-charcoalInk/80 text-base mt-3 leading-relaxed">
+                        Penguasaan perangkat kreatif, Generative AI, analisis kelayakan finansial agribisnis, otomasi alur kerja digital, kesekretariatan organisasi, dan kepabeanan ekspor-impor.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+                    
+                    <!-- Hard Skill 1: Desain Grafis & Visual Branding -->
+                    <div class="skill-card bg-white rounded-2xl border border-deepSlate/15 overflow-hidden shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-44 bg-abyssalNavy overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
+                                     alt="Desain Grafis dan Visual Branding"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                                     class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500">
+                                <div class="hidden w-full h-full bg-gradient-to-br from-abyssalNavy to-deepSlate flex flex-col items-center justify-center text-champagneGold p-4">
+                                    <i data-lucide="palette" class="w-10 h-10 mb-2"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-white">Visual Branding Studio</span>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-abyssalNavy/85 via-abyssalNavy/20 to-transparent"></div>
+                                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 rounded-md bg-champagneGold text-abyssalNavy text-xs font-bold">Visual Branding</span>
+                                    <span class="w-8 h-8 rounded-lg bg-abyssalNavy/90 border border-champagneGold/40 text-champagneGold flex items-center justify-center">
+                                        <i data-lucide="pen-tool" class="w-4 h-4"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-6 pb-4">
+                                <h3 class="text-lg font-bold text-abyssalNavy leading-snug">
+                                    Desain Grafis &amp; Visual Branding
+                                </h3>
+                                <p class="text-sm text-charcoalInk/80 mt-2 leading-relaxed">
+                                    Perancangan poster edukasi K3 kreatif, infografis publik instansi, serta identitas visual merek lokal berbasis motif Boledong untuk UMKM.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Canva Pro</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Kampanye K3</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Brand Identity</span>
+                        </div>
+                    </div>
+
+                    <!-- Hard Skill 2: Produksi Konten & Generative AI -->
+                    <div class="skill-card bg-white rounded-2xl border border-deepSlate/15 overflow-hidden shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-44 bg-abyssalNavy overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
+                                     alt="Produksi Konten dan Generative AI"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                                     class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500">
+                                <div class="hidden w-full h-full bg-gradient-to-br from-abyssalNavy to-deepSlate flex flex-col items-center justify-center text-champagneGold p-4">
+                                    <i data-lucide="sparkles" class="w-10 h-10 mb-2"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-white">Generative AI &amp; Content</span>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-abyssalNavy/85 via-abyssalNavy/20 to-transparent"></div>
+                                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 rounded-md bg-champagneGold text-abyssalNavy text-xs font-bold">Generative AI &amp; Video</span>
+                                    <span class="w-8 h-8 rounded-lg bg-abyssalNavy/90 border border-champagneGold/40 text-champagneGold flex items-center justify-center">
+                                        <i data-lucide="film" class="w-4 h-4"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-6 pb-4">
+                                <h3 class="text-lg font-bold text-abyssalNavy leading-snug">
+                                    Produksi Konten &amp; Generative AI
+                                </h3>
+                                <p class="text-sm text-charcoalInk/80 mt-2 leading-relaxed">
+                                    Pengoperasian workflow Generative AI untuk penulisan naskah edukatif, narasi audio/voiceover, serta penyuntingan video pendek media sosial.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Google AI Studio</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">ElevenLabs</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">CapCut</span>
+                        </div>
+                    </div>
+
+                    <!-- Hard Skill 3: Analisis Kelayakan Finansial Agribisnis -->
+                    <div class="skill-card bg-white rounded-2xl border border-deepSlate/15 overflow-hidden shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-44 bg-abyssalNavy overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                                     alt="Analisis Kelayakan Finansial Agribisnis"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                                     class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500">
+                                <div class="hidden w-full h-full bg-gradient-to-br from-abyssalNavy to-deepSlate flex flex-col items-center justify-center text-champagneGold p-4">
+                                    <i data-lucide="trending-up" class="w-10 h-10 mb-2"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-white">Agribusiness Analytics</span>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-abyssalNavy/85 via-abyssalNavy/20 to-transparent"></div>
+                                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 rounded-md bg-champagneGold text-abyssalNavy text-xs font-bold">Finansial Agribisnis</span>
+                                    <span class="w-8 h-8 rounded-lg bg-abyssalNavy/90 border border-champagneGold/40 text-champagneGold flex items-center justify-center">
+                                        <i data-lucide="pie-chart" class="w-4 h-4"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-6 pb-4">
+                                <h3 class="text-lg font-bold text-abyssalNavy leading-snug">
+                                    Analisis Kelayakan Finansial Agribisnis
+                                </h3>
+                                <p class="text-sm text-charcoalInk/80 mt-2 leading-relaxed">
+                                    Evaluasi arus kas, struktur biaya investasi dan operasional budidaya perikanan, serta perhitungan indikator kelayakan usaha tambak intensif.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Finansial Vaname</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Microsoft Excel</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Evaluasi Usaha</span>
+                        </div>
+                    </div>
+
+                    <!-- Hard Skill 4: Otomasi Web & Database Workflow -->
+                    <div class="skill-card bg-white rounded-2xl border border-deepSlate/15 overflow-hidden shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-44 bg-abyssalNavy overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+                                     alt="Otomasi Web dan Database Workflow"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                                     class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500">
+                                <div class="hidden w-full h-full bg-gradient-to-br from-abyssalNavy to-deepSlate flex flex-col items-center justify-center text-champagneGold p-4">
+                                    <i data-lucide="workflow" class="w-10 h-10 mb-2"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-white">Web &amp; Database Workflow</span>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-abyssalNavy/85 via-abyssalNavy/20 to-transparent"></div>
+                                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 rounded-md bg-champagneGold text-abyssalNavy text-xs font-bold">Web &amp; Automation</span>
+                                    <span class="w-8 h-8 rounded-lg bg-abyssalNavy/90 border border-champagneGold/40 text-champagneGold flex items-center justify-center">
+                                        <i data-lucide="settings" class="w-4 h-4"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-6 pb-4">
+                                <h3 class="text-lg font-bold text-abyssalNavy leading-snug">
+                                    Otomasi Web &amp; Database Workflow
+                                </h3>
+                                <p class="text-sm text-charcoalInk/80 mt-2 leading-relaxed">
+                                    Pengembangan website landing page responsif serta integrasi pencatatan pesanan otomatis berbasis Google Sheets, Apps Script, dan n8n.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">n8n Workflow</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Google Sheets</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Landing Page</span>
+                        </div>
+                    </div>
+
+                    <!-- Hard Skill 5: Tata Kelola Kesekretariatan & Administrasi -->
+                    <div class="skill-card bg-white rounded-2xl border border-deepSlate/15 overflow-hidden shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-44 bg-abyssalNavy overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80"
+                                     alt="Tata Kelola Kesekretariatan dan Administrasi"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                                     class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500">
+                                <div class="hidden w-full h-full bg-gradient-to-br from-abyssalNavy to-deepSlate flex flex-col items-center justify-center text-champagneGold p-4">
+                                    <i data-lucide="folder-kanban" class="w-10 h-10 mb-2"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-white">Secretariat &amp; Admin</span>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-abyssalNavy/85 via-abyssalNavy/20 to-transparent"></div>
+                                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 rounded-md bg-champagneGold text-abyssalNavy text-xs font-bold">Kesekretariatan</span>
+                                    <span class="w-8 h-8 rounded-lg bg-abyssalNavy/90 border border-champagneGold/40 text-champagneGold flex items-center justify-center">
+                                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-6 pb-4">
+                                <h3 class="text-lg font-bold text-abyssalNavy leading-snug">
+                                    Tata Kelola Kesekretariatan &amp; Administrasi
+                                </h3>
+                                <p class="text-sm text-charcoalInk/80 mt-2 leading-relaxed">
+                                    Penyusunan surat-menyurat resmi, notulensi rapat, pengarsipan dokumen &amp; database anggota, serta penyusunan proposal dan LPJ kegiatan.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Surat Resmi</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Proposal &amp; LPJ</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Database Arsip</span>
+                        </div>
+                    </div>
+
+                    <!-- Hard Skill 6: Dokumentasi Ekspor-Impor & Kepatuhan -->
+                    <div class="skill-card bg-white rounded-2xl border border-deepSlate/15 overflow-hidden shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-44 bg-abyssalNavy overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80"
+                                     alt="Dokumentasi Ekspor-Impor dan Kepatuhan"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                                     class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500">
+                                <div class="hidden w-full h-full bg-gradient-to-br from-abyssalNavy to-deepSlate flex flex-col items-center justify-center text-champagneGold p-4">
+                                    <i data-lucide="ship" class="w-10 h-10 mb-2"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-white">Export-Import Compliance</span>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-abyssalNavy/85 via-abyssalNavy/20 to-transparent"></div>
+                                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                                    <span class="px-2.5 py-1 rounded-md bg-champagneGold text-abyssalNavy text-xs font-bold">Ekspor-Impor (BNSP)</span>
+                                    <span class="w-8 h-8 rounded-lg bg-abyssalNavy/90 border border-champagneGold/40 text-champagneGold flex items-center justify-center">
+                                        <i data-lucide="globe" class="w-4 h-4"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-6 pb-4">
+                                <h3 class="text-lg font-bold text-abyssalNavy leading-snug">
+                                    Dokumentasi Ekspor-Impor &amp; Kepatuhan
+                                </h3>
+                                <p class="text-sm text-charcoalInk/80 mt-2 leading-relaxed">
+                                    Pemahaman alur kepabeanan, kelengkapan dokumen perdagangan luar negeri (PEB/PIB), serta kepatuhan prosedur ekspor komoditas bersertifikasi BNSP.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">PEB / PIB</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Kepabeanan</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-pearlWhite border border-deepSlate/15 text-xs font-semibold text-abyssalNavy">Sertifikasi BNSP</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 4B. KOMPETSI INTERPERSONAL (SOFT SKILLS) YANG RELEVAN -->
+            <div class="pt-12 border-t border-deepSlate/15">
+                <div class="max-w-3xl mb-10">
+                    <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-champagneGold">Karakter &amp; Etos Kerja</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-abyssalNavy mt-2">
+                        Kompetensi Interpersonal (Soft Skills)
+                    </h2>
+                    <div class="w-16 h-1 bg-champagneGold rounded-full mt-3"></div>
+                    <p class="text-charcoalInk/80 text-base mt-3 leading-relaxed">
+                        Kapabilitas interpersonal yang terasah langsung melalui penugasan di Balai K3 Makassar, BBPVP Makassar, Bidang Kesekretariatan HMB, Racana Kastratara, FKMPI, dan UMKM Meng Ball.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Soft Skill 1 -->
+                    <div class="p-6 rounded-2xl bg-white border border-deepSlate/15 hover:border-champagneGold shadow-sm transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center">
+                                <i data-lucide="megaphone" class="w-5 h-5"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-pearlWhite border border-champagneGold/40 text-[11px] font-bold text-abyssalNavy">
+                                Balai K3 Makassar
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-abyssalNavy mb-2">
+                            Komunikasi Publik &amp; Edukasi Instansi
+                        </h3>
+                        <p class="text-sm text-charcoalInk/80 leading-relaxed">
+                            Teruji selama 6 bulan di <strong>Balai K3 Makassar</strong> dalam menerjemahkan regulasi keselamatan kerja menjadi narasi publik yang edukatif, persuasif, dan mudah dipahami masyarakat.
+                        </p>
+                    </div>
+
+                    <!-- Soft Skill 2 -->
+                    <div class="p-6 rounded-2xl bg-white border border-deepSlate/15 hover:border-champagneGold shadow-sm transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center">
+                                <i data-lucide="cpu" class="w-5 h-5"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-pearlWhite border border-champagneGold/40 text-[11px] font-bold text-abyssalNavy">
+                                BBPVP Makassar
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-abyssalNavy mb-2">
+                            Adaptabilitas Teknologi &amp; Inovasi Kreatif
+                        </h3>
+                        <p class="text-sm text-charcoalInk/80 leading-relaxed">
+                            Terasah melalui pelatihan vokasi &amp; OJT di <strong>BBPVP Makassar</strong> dalam mengadopsi alur kerja Generative AI secara cepat untuk meningkatkan efisiensi produksi aset digital dan bisnis.
+                        </p>
+                    </div>
+
+                    <!-- Soft Skill 3 -->
+                    <div class="p-6 rounded-2xl bg-white border border-deepSlate/15 hover:border-champagneGold shadow-sm transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center">
+                                <i data-lucide="file-check-2" class="w-5 h-5"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-pearlWhite border border-champagneGold/40 text-[11px] font-bold text-abyssalNavy">
+                                Kesekretariatan HMB
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-abyssalNavy mb-2">
+                            Ketelitian Administrasi &amp; Tata Kelola Dokumen
+                        </h3>
+                        <p class="text-sm text-charcoalInk/80 leading-relaxed">
+                            Teruji di <strong>Bidang Kesekretariatan Himpunan Mahasiswa Bisnis</strong> dalam menjaga ketertiban surat resmi, notulensi rapat, database anggota, serta proposal dan LPJ kegiatan.
+                        </p>
+                    </div>
+
+                    <!-- Soft Skill 4 -->
+                    <div class="p-6 rounded-2xl bg-white border border-deepSlate/15 hover:border-champagneGold shadow-sm transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center">
+                                <i data-lucide="compass" class="w-5 h-5"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-pearlWhite border border-champagneGold/40 text-[11px] font-bold text-abyssalNavy">
+                                Racana Kastratara
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-abyssalNavy mb-2">
+                            Kepemimpinan Lapangan &amp; Kedisiplinan Tim
+                        </h3>
+                        <p class="text-sm text-charcoalInk/80 leading-relaxed">
+                            Dibangun melalui keaktifan di <strong>Racana Kastratara (Pramuka Perguruan Tinggi)</strong> dalam memimpin kegiatan lapangan, manajemen logistik tim, dan kedisiplinan eksekusi program.
+                        </p>
+                    </div>
+
+                    <!-- Soft Skill 5 -->
+                    <div class="p-6 rounded-2xl bg-white border border-deepSlate/15 hover:border-champagneGold shadow-sm transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center">
+                                <i data-lucide="users" class="w-5 h-5"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-pearlWhite border border-champagneGold/40 text-[11px] font-bold text-abyssalNavy">
+                                FKMPI Nasional
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-abyssalNavy mb-2">
+                            Jejaring Lintas Daerah &amp; Advokasi Vokasi
+                        </h3>
+                        <p class="text-sm text-charcoalInk/80 leading-relaxed">
+                            Berkembang lewat peran sebagai delegasi <strong>FKMPI</strong> dalam membangun komunikasi kolaboratif antar-politeknik se-Indonesia serta menyampaikan aspirasi mahasiswa vokasi.
+                        </p>
+                    </div>
+
+                    <!-- Soft Skill 6 -->
+                    <div class="p-6 rounded-2xl bg-white border border-deepSlate/15 hover:border-champagneGold shadow-sm transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center">
+                                <i data-lucide="briefcase" class="w-5 h-5"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-pearlWhite border border-champagneGold/40 text-[11px] font-bold text-abyssalNavy">
+                                UMKM Meng Ball
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-abyssalNavy mb-2">
+                            Inisiatif Kewirausahaan &amp; Manajemen Operasional
+                        </h3>
+                        <p class="text-sm text-charcoalInk/80 leading-relaxed">
+                            Teruji dalam mengelola produksi, pemasaran digital, dan pelayanan pelanggan <strong>UMKM Meng Ball</strong> di Pangkep secara mandiri dan berorientasi solusi.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. BAGIAN PORTOFOLIO & STUDI KASUS UTAMA (Abyssal Navy #0A192F + Kartu Deep Slate Blue #172A45 + Aksen Champagne Gold #C5A059) -->
+    <section id="karya" class="py-20 sm:py-28 bg-abyssalNavy text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header Section -->
+            <div class="max-w-3xl">
+                <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-champagneGold">Proyek Unggulan</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+                    Studi Kasus Utama
+                </h2>
+                <div class="w-20 h-1 bg-champagneGold rounded-full mt-4"></div>
+                <p class="text-slate-300 text-base sm:text-lg mt-4 leading-relaxed">
+                    Pilih kategori di bawah atau klik kartu studi kasus untuk meninjau rincian Tantangan, Proses pengerjaan, dan Hasil terukur yang dicapai.
+                </p>
+            </div>
+
+            <!-- Filter Kategori Interaktif -->
+            <div class="flex flex-wrap items-center gap-2.5 mt-8 mb-10" id="filter-container">
+                <button data-filter="all" class="filter-btn active px-4 py-2.5 rounded-xl text-sm font-bold bg-champagneGold text-abyssalNavy shadow-md transition-all">
+                    Semua
+                </button>
+                <button data-filter="k3" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-semibold bg-deepSlate text-slate-200 border border-champagneGold/25 hover:border-champagneGold transition-all">
+                    Konten &amp; Desain K3
+                </button>
+                <button data-filter="umkm" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-semibold bg-deepSlate text-slate-200 border border-champagneGold/25 hover:border-champagneGold transition-all">
+                    Bisnis &amp; Digital UMKM
+                </button>
+                <button data-filter="agribisnis" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-semibold bg-deepSlate text-slate-200 border border-champagneGold/25 hover:border-champagneGold transition-all">
+                    Riset Agribisnis
+                </button>
+            </div>
+
+            <!-- Grid Kartu Proyek (Deep Slate Blue #172A45) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8" id="projects-grid">
+
+                <!-- PROYEK 1: Kampanye Edukasi K3 Kreatif & Tema GTA VI -->
+                <article data-category="k3" data-project-id="0" class="project-card cursor-pointer bg-deepSlate rounded-2xl border border-champagneGold/25 overflow-hidden shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-abyssalNavy via-deepSlate to-abyssalNavy p-6 flex flex-col justify-between border-b border-champagneGold/15 relative overflow-hidden">
+                            <div class="flex items-center justify-between z-10">
+                                <span class="px-3 py-1 rounded-lg bg-champagneGold text-abyssalNavy text-xs font-bold">
+                                    Konten &amp; Desain K3
+                                </span>
+                                <span class="text-xs font-medium text-slate-300 bg-abyssalNavy/80 px-2.5 py-1 rounded-md border border-champagneGold/20">
+                                    Balai K3 Makassar
+                                </span>
+                            </div>
+                            <div class="z-10 flex items-end justify-between">
+                                <div>
+                                    <p class="text-xs text-champagneGold font-semibold uppercase tracking-wider">Magang Hub 6 Bulan</p>
+                                    <p class="font-heading font-bold text-lg text-white mt-0.5">Edukasi K3 Kreatif &amp; Tema GTA VI</p>
+                                </div>
+                                <div class="w-11 h-11 rounded-xl bg-champagneGold/15 border border-champagneGold/40 flex items-center justify-center text-champagneGold group-hover:scale-110 transition-transform">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-champagneGold transition-colors">
+                                Kampanye Edukasi K3 Kreatif &amp; Tema GTA VI (Balai K3 Makassar)
+                            </h3>
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                <p><strong class="text-champagneGold">Tantangan:</strong> Pesan keselamatan kerja kerap terasa kaku dan kurang menarik minat pekerja muda di media sosial.</p>
+                                <p><strong class="text-white">Proses:</strong> Merancang perencanaan konten mingguan/bulanan serta mengadaptasi visual budaya pop GTA VI ke poster &amp; video edukasi K3.</p>
+                                <p><strong class="text-white">Hasil:</strong> Meningkatkan daya tarik visual, jangkauan organik, dan keterlibatan audiens kanal publik Balai K3 Makassar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2">
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Canva Pro</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">CapCut</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Content Strategy</span>
+                        </div>
+                        <div class="pt-3 border-t border-abyssalNavy/70 flex items-center justify-between text-sm font-bold text-champagneGold">
+                            <span>Buka Detail Studi Kasus</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYEK 2: Branding Digital, Landing Page & Sistem Order UMKM Meng Ball -->
+                <article data-category="umkm" data-project-id="1" class="project-card cursor-pointer bg-deepSlate rounded-2xl border border-champagneGold/25 overflow-hidden shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-abyssalNavy via-deepSlate to-abyssalNavy p-6 flex flex-col justify-between border-b border-champagneGold/15 relative overflow-hidden">
+                            <div class="flex items-center justify-between z-10">
+                                <span class="px-3 py-1 rounded-lg bg-champagneGold text-abyssalNavy text-xs font-bold">
+                                    Bisnis &amp; Digital UMKM
+                                </span>
+                                <span class="text-xs font-medium text-slate-300 bg-abyssalNavy/80 px-2.5 py-1 rounded-md border border-champagneGold/20">
+                                    mengball.my.id
+                                </span>
+                            </div>
+                            <div class="z-10 flex items-end justify-between">
+                                <div>
+                                    <p class="text-xs text-champagneGold font-semibold uppercase tracking-wider">Motif Boledong &amp; Otomasi</p>
+                                    <p class="font-heading font-bold text-lg text-white mt-0.5">UMKM Meng Ball Pangkep</p>
+                                </div>
+                                <div class="w-11 h-11 rounded-xl bg-champagneGold/15 border border-champagneGold/40 flex items-center justify-center text-champagneGold group-hover:scale-110 transition-transform">
+                                    <i data-lucide="store" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-champagneGold transition-colors">
+                                Branding Digital, Landing Page &amp; Sistem Order UMKM Meng Ball (mengball.my.id)
+                            </h3>
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                <p><strong class="text-champagneGold">Tantangan:</strong> Produk bakso ikan bandeng tanpa duri khas Ma'rang, Pangkep memerlukan identitas merek kuat dan pencatatan pesanan otomatis.</p>
+                                <p><strong class="text-white">Proses:</strong> Merancang branding motif lokal Boledong, membangun landing page responsif, dan otomasi order Google Sheets &amp; n8n.</p>
+                                <p><strong class="text-white">Hasil:</strong> Mempercepat alur transaksi pelanggan serta menertibkan rekapitulasi penjualan harian UMKM.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2">
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Landing Page</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Google Sheets</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">n8n</span>
+                        </div>
+                        <div class="pt-3 border-t border-abyssalNavy/70 flex items-center justify-between text-sm font-bold text-champagneGold">
+                            <span>Buka Detail Studi Kasus</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYEK 3: Analisis Kelayakan Finansial Tambak Udang Vaname Intensif (Skripsi D4) -->
+                <article data-category="agribisnis" data-project-id="2" class="project-card cursor-pointer bg-deepSlate rounded-2xl border border-champagneGold/25 overflow-hidden shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-abyssalNavy via-deepSlate to-abyssalNavy p-6 flex flex-col justify-between border-b border-champagneGold/15 relative overflow-hidden">
+                            <div class="flex items-center justify-between z-10">
+                                <span class="px-3 py-1 rounded-lg bg-champagneGold text-abyssalNavy text-xs font-bold">
+                                    Riset Agribisnis
+                                </span>
+                                <span class="text-xs font-medium text-slate-300 bg-abyssalNavy/80 px-2.5 py-1 rounded-md border border-champagneGold/20">
+                                    Skripsi D4 (2026)
+                                </span>
+                            </div>
+                            <div class="z-10 flex items-end justify-between">
+                                <div>
+                                    <p class="text-xs text-champagneGold font-semibold uppercase tracking-wider">CV. Putra Bahari Marina</p>
+                                    <p class="font-heading font-bold text-lg text-white mt-0.5">Tambak Udang Vaname Intensif</p>
+                                </div>
+                                <div class="w-11 h-11 rounded-xl bg-champagneGold/15 border border-champagneGold/40 flex items-center justify-center text-champagneGold group-hover:scale-110 transition-transform">
+                                    <i data-lucide="trending-up" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-champagneGold transition-colors">
+                                Analisis Kelayakan Finansial Tambak Udang Vaname Intensif (Skripsi D4)
+                            </h3>
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                <p><strong class="text-champagneGold">Tantangan:</strong> Budidaya udang vaname sistem intensif memerlukan modal dan biaya operasional tinggi sehingga butuh evaluasi risiko terukur.</p>
+                                <p><strong class="text-white">Proses:</strong> Audit struktur biaya investasi, biaya operasional, proyeksi arus kas, dan indikator kelayakan usaha di CV. Putra Bahari Marina Probolinggo.</p>
+                                <p><strong class="text-white">Hasil:</strong> Menghasilkan rekomendasi objektif efisiensi biaya pakan/operasional serta kelayakan ekspansi tambak intensif.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2">
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Analisis Finansial</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Agribisnis Perikanan</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Microsoft Excel</span>
+                        </div>
+                        <div class="pt-3 border-t border-abyssalNavy/70 flex items-center justify-between text-sm font-bold text-champagneGold">
+                            <span>Buka Detail Studi Kasus</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYEK 4: Produksi Aset Kampanye Generative AI (OJT BBPVP Makassar) -->
+                <article data-category="k3" data-project-id="3" class="project-card cursor-pointer bg-deepSlate rounded-2xl border border-champagneGold/25 overflow-hidden shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-abyssalNavy via-deepSlate to-abyssalNavy p-6 flex flex-col justify-between border-b border-champagneGold/15 relative overflow-hidden">
+                            <div class="flex items-center justify-between z-10">
+                                <span class="px-3 py-1 rounded-lg bg-champagneGold text-abyssalNavy text-xs font-bold">
+                                    Konten &amp; Desain K3
+                                </span>
+                                <span class="text-xs font-medium text-slate-300 bg-abyssalNavy/80 px-2.5 py-1 rounded-md border border-champagneGold/20">
+                                    BBPVP Makassar (2026)
+                                </span>
+                            </div>
+                            <div class="z-10 flex items-end justify-between">
+                                <div>
+                                    <p class="text-xs text-champagneGold font-semibold uppercase tracking-wider">OJT Generative AI</p>
+                                    <p class="font-heading font-bold text-lg text-white mt-0.5">Akselerasi Produksi Audio-Visual AI</p>
+                                </div>
+                                <div class="w-11 h-11 rounded-xl bg-champagneGold/15 border border-champagneGold/40 flex items-center justify-center text-champagneGold group-hover:scale-110 transition-transform">
+                                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-champagneGold transition-colors">
+                                Implementasi Workflow Generative AI untuk Produksi Konten Digital &amp; Bisnis
+                            </h3>
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                <p><strong class="text-champagneGold">Tantangan:</strong> Kebutuhan produksi aset visual, naskah kampanye, dan sulih suara (voiceover) berkualitas tinggi dalam tenggat waktu singkat.</p>
+                                <p><strong class="text-white">Proses:</strong> Mengintegrasikan prompt engineering visual, generasi audio ElevenLabs, dan penyuntingan video selama program OJT BBPVP Makassar.</p>
+                                <p><strong class="text-white">Hasil:</strong> Memangkas waktu produksi konten digital hingga lebih efisien sekaligus menjaga konsistensi kualitas komunikasi proyek.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2">
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Generative AI</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Voiceover AI</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Video Editing</span>
+                        </div>
+                        <div class="pt-3 border-t border-abyssalNavy/70 flex items-center justify-between text-sm font-bold text-champagneGold">
+                            <span>Buka Detail Studi Kasus</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PENGALAMAN KERJA, ORGANISASI, PENDIDIKAN & SERTIFIKASI (Pearl Off-White #F8F9FA + Charcoal Ink #1E293B) -->
+    <section id="pengalaman" class="py-20 sm:py-28 bg-pearlWhite text-charcoalInk">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-champagneGold">Rekam Jejak Profesional</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-abyssalNavy mt-2">
+                    Pengalaman Kerja, Organisasi &amp; Pendidikan
+                </h2>
+                <div class="w-16 h-1 bg-champagneGold rounded-full mx-auto mt-4"></div>
+                <p class="text-charcoalInk/80 text-base mt-4">
+                    Perjalanan kontribusi profesional di instansi pemerintah, pelatihan vokasi BBPVP Makassar, kewirausahaan UMKM di Pangkep, kepemimpinan organisasi, serta kualifikasi akademik.
+                </p>
+            </div>
+
+            <!-- Timeline Container dengan Garis & Ikon Champagne Gold -->
+            <div class="relative border-l-2 border-champagneGold ml-3 sm:ml-6 space-y-8">
+
+                <!-- 1. Content Creator — Program Magang Hub (6 Bulan) di Balai K3 Makassar -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border-2 border-champagneGold/60 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Program Magang Hub (6 Bulan)
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">2026</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Content Creator — Program Magang Hub (6 Bulan)
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Balai Keselamatan dan Kesehatan Kerja (Balai K3) Makassar
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Merancang perencanaan konten K3 mingguan dan bulanan, memproduksi poster edukasi K3 kreatif (termasuk adaptasi visual <em>pop-culture</em> &amp; kampanye publik), menyusun penulisan naskah edukatif, mengoordinasikan Person-in-Charge (PIC) tim produksi, serta memperkuat komunikasi publik instansi.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. Peserta Pelatihan Vokasi & On-the-Job Training (OJT) — Program BBPVP Makassar -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Pelatihan Vokasi &amp; OJT
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">2026</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Peserta Pelatihan Vokasi &amp; On-the-Job Training (OJT) — Program BBPVP Makassar
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Bidang Pengoperasian Generative AI untuk Konten Digital &amp; Bisnis — BBPVP Makassar
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Menguasai alur kerja (<em>workflow</em>) pengoperasian Generative AI untuk produksi aset visual, generasi audio/<em>voiceover</em>, penyuntingan video, serta implementasi langsung solusi kecerdasan buatan pada proyek digital dan pengembangan bisnis selama masa OJT.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. Founder & Pengelola Operasional — Meng Ball -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Kewirausahaan UMKM
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">2026</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Founder &amp; Pengelola Operasional — Meng Ball
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Jalan Panasa, Ma'rang, Pangkep, Sulawesi Selatan (<a href="https://mengball.my.id" target="_blank" rel="noopener noreferrer" class="underline decoration-champagneGold hover:text-abyssalNavy">mengball.my.id</a>)
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Mengembangkan UMKM kuliner bakso ikan bandeng tanpa duri dengan identitas budaya motif lokal <strong>Boledong</strong> di Jalan Panasa, Ma'rang, Pangkep; membangun landing page <a href="https://mengball.my.id" target="_blank" rel="noopener noreferrer" class="underline decoration-champagneGold font-semibold text-abyssalNavy hover:text-champagneGold">mengball.my.id</a> serta otomasi pencatatan pesanan menggunakan <strong>n8n</strong> dan <strong>Google Sheets</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. Pengurus Aktif — Bidang Kesekretariatan, Himpunan Mahasiswa Bisnis -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Organisasi Kemahasiswaan
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">2025 – 2026</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Pengurus Aktif — Bidang Kesekretariatan, Himpunan Mahasiswa Bisnis
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Politeknik Pertanian Negeri Pangkajene Kepulauan (Politani Pangkep)
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Bertanggung jawab atas tata kelola surat-menyurat resmi, pengarsipan dokumen dan database anggota, pencatatan notulensi rapat, penyusunan proposal serta Laporan Pertanggungjawaban (LPJ) kegiatan, dan koordinasi jadwal agenda organisasi.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. Anggota Aktif — Racana Kastratara -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Kepramukaan Perguruan Tinggi
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">Politani Pangkep</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Anggota Aktif — Racana Kastratara
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Gerakan Pramuka Perguruan Tinggi — Politani Pangkep
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Berperan aktif dalam pembinaan kepemimpinan, manajemen kegiatan lapangan, pengabdian masyarakat, serta penguatan kedisiplinan dan kerja sama tim di lingkungan kampus.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6. Delegasi & Anggota Aktif — FKMPI -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Jejaring Nasional Vokasi
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">Regional &amp; Nasional</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Delegasi &amp; Anggota Aktif — FKMPI
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Forum Komunikasi Mahasiswa Politeknik se-Indonesia
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Membangun jejaring nasional antar-politeknik, terlibat dalam advokasi mahasiswa pendidikan vokasi, serta menjalin komunikasi kolaboratif lintas daerah di Indonesia.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 7. Pendidikan D4 Agribisnis Perikanan, Sertifikasi BNSP & Penelitian Kelayakan Finansial -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Pendidikan, Sertifikasi &amp; Riset
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">Lulus 2026</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                                Lulusan D4 Agribisnis Perikanan — Politani Pangkep (2026)
+                            </h3>
+                            <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                                Politeknik Pertanian Negeri Pangkajene Kepulauan (Politani Pangkep)
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-deepSlate/10 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                            <div class="p-3.5 rounded-xl bg-pearlWhite border border-deepSlate/10">
+                                <p class="font-bold text-abyssalNavy flex items-center gap-1.5">
+                                    <i data-lucide="badge-check" class="w-4 h-4 text-champagneGold shrink-0"></i>
+                                    <span>Sertifikasi Kompetensi BNSP</span>
+                                </p>
+                                <p class="text-xs text-charcoalInk/80 mt-1 leading-relaxed">
+                                    Tersertifikasi resmi Badan Nasional Sertifikasi Profesi (BNSP) pada bidang analisis ekspor-impor, dokumen PEB/PIB, &amp; kepabeanan.
+                                </p>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-pearlWhite border border-deepSlate/10">
+                                <p class="font-bold text-abyssalNavy flex items-center gap-1.5">
+                                    <i data-lucide="line-chart" class="w-4 h-4 text-champagneGold shrink-0"></i>
+                                    <span>Riset Kelayakan Finansial</span>
+                                </p>
+                                <p class="text-xs text-charcoalInk/80 mt-1 leading-relaxed">
+                                    Penelitian kelayakan finansial tambak udang vaname intensif di <strong>CV. Putra Bahari Marina Probolinggo</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER & FORMULIR KONTAK (Abyssal Navy #0A192F + Kartu Form Deep Slate Blue #172A45 + Tombol Submit Champagne Gold #C5A059) -->
+    <footer id="kontak" class="bg-abyssalNavy text-white pt-20 pb-12 border-t border-deepSlate">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-deepSlate">
+                
+                <!-- Kolom Kiri: Info Kontak (Email dengan Salin Cepat, Website UMKM, Domisili Pangkep) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-champagneGold">Hubungi Saya</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 leading-tight">
+                            Mari Wujudkan Kolaborasi Terbaik.
+                        </h2>
+                        <div class="w-16 h-1 bg-champagneGold rounded-full mt-4"></div>
+                    </div>
+
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Silakan hubungi saya untuk diskusi peluang karier penuh waktu (<span class="text-white font-semibold">full-time</span>), pembuatan kampanye konten visual, analisis agribisnis, administrasi operasional, maupun pengembangan landing page dan otomasi UMKM.
+                    </p>
+
+                    <!-- Daftar Kontak Langsung -->
+                    <div class="space-y-3.5 pt-2">
+                        <!-- Email Profesional + Tombol Salin Cepat -->
+                        <div class="flex items-center justify-between gap-3 p-4 rounded-2xl bg-deepSlate border border-champagneGold/25 hover:border-champagneGold transition-all">
+                            <a href="mailto:hartono.eddy11@gmail.com" class="flex items-center gap-3.5 group min-w-0">
+                                <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div class="truncate">
+                                    <p class="text-xs text-slate-400">Email Profesional</p>
+                                    <p class="text-sm sm:text-base font-bold text-white group-hover:text-champagneGold transition-colors truncate">hartono.eddy11@gmail.com</p>
+                                </div>
+                            </a>
+                            <button type="button" id="copy-email-btn" title="Salin Alamat Email" class="px-3 py-2 rounded-xl bg-abyssalNavy hover:bg-champagneGold text-champagneGold hover:text-abyssalNavy border border-champagneGold/40 text-xs font-bold transition-all shrink-0 inline-flex items-center gap-1.5">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                <span id="copy-email-text">Salin</span>
+                            </button>
+                        </div>
+
+                        <!-- Website UMKM Meng Ball -->
+                        <a href="https://mengball.my.id" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-deepSlate border border-champagneGold/25 hover:border-champagneGold transition-all group">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center shrink-0">
+                                <i data-lucide="globe" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Website UMKM</p>
+                                <p class="text-sm sm:text-base font-bold text-white group-hover:text-champagneGold transition-colors">mengball.my.id</p>
+                            </div>
+                        </a>
+
+                        <!-- Domisili -->
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-deepSlate border border-champagneGold/25">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Domisili</p>
+                                <p class="text-sm sm:text-base font-bold text-white">Pangkep, Sulawesi Selatan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Kartu Form Deep Slate Blue (#172A45) + Tombol Submit Champagne Gold (#C5A059) -->
+                <div class="lg:col-span-7">
+                    <div class="bg-deepSlate border border-champagneGold/30 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold text-white">Formulir Pesan &amp; Kolaborasi</h3>
+                            <p class="text-sm text-slate-300 mt-1">
+                                Pesan Anda akan langsung diarahkan ke email profesional <span class="text-champagneGold font-semibold">hartono.eddy11@gmail.com</span>.
+                            </p>
+                        </div>
+
+                        <!-- Notifikasi Pengiriman Sukses -->
+                        <div id="form-success-box" class="hidden mb-6 p-4 rounded-xl bg-abyssalNavy border border-champagneGold text-slate-200">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-champagneGold shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-sm text-champagneGold">Pesan Siap Dikirim ke hartono.eddy11@gmail.com!</p>
+                                    <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                                        Terima kasih telah menghubungi Eddy Hartono. Aplikasi email Anda telah dibuka dengan draf pesan otomatis, atau gunakan tombol <strong>Salin</strong> di samping email untuk menyalin <span class="text-white font-semibold">hartono.eddy11@gmail.com</span>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form -->
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="sender-name" class="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-2">Nama Lengkap / Instansi</label>
+                                    <input type="text" id="sender-name" name="nama" required placeholder="Contoh: Andi Pratama / PT Bahari" class="w-full px-4 py-3 rounded-xl bg-abyssalNavy border border-champagneGold/25 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-champagneGold transition-colors">
+                                </div>
+                                <div>
+                                    <label for="sender-contact" class="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-2">Email atau Nomor Kontak</label>
+                                    <input type="text" id="sender-contact" name="kontak" required placeholder="Contoh: andi@email.com / 0812..." class="w-full px-4 py-3 rounded-xl bg-abyssalNavy border border-champagneGold/25 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-champagneGold transition-colors">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="sender-topic" class="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-2">Keperluan</label>
+                                <select id="sender-topic" name="topik" class="w-full px-4 py-3 rounded-xl bg-abyssalNavy border border-champagneGold/25 text-white text-sm focus:outline-none focus:border-champagneGold transition-colors">
+                                    <option value="Rekrutmen Full-Time">Rekrutmen Posisi Penuh Waktu (Full-Time)</option>
+                                    <option value="Konten & Desain K3 / Visual">Proyek Konten Digital &amp; Desain Visual</option>
+                                    <option value="Bisnis & Digital UMKM">Branding UMKM, Landing Page &amp; Otomasi</option>
+                                    <option value="Riset Agribisnis & Operasional">Analisis Agribisnis &amp; Operasional</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="sender-message" class="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-2">Pesan Detail</label>
+                                <textarea id="sender-message" name="pesan" rows="4" required placeholder="Tuliskan detail tawaran kerja, ruang lingkup proyek, atau jadwal diskusi..." class="w-full px-4 py-3 rounded-xl bg-abyssalNavy border border-champagneGold/25 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-champagneGold transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-champagneGold hover:brightness-110 text-abyssalNavy font-bold text-sm sm:text-base shadow-lg shadow-champagneGold/20 transition-all active:scale-95">
+                                <span>Kirim ke hartono.eddy11@gmail.com</span>
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright & Bottom Bar (Bersih tanpa tautan Instagram Meng Ball) -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-400">
+                <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                    <span class="font-heading font-extrabold text-white text-base">EH<span class="text-champagneGold">.</span></span>
+                    <span>&copy; 2026 Eddy Hartono &bull; Pangkep, Sulawesi Selatan.</span>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-5">
+                    <a href="#tentang" class="hover:text-champagneGold transition-colors">Profil</a>
+                    <a href="#karya" class="hover:text-champagneGold transition-colors">Studi Kasus</a>
+                    <a href="#pengalaman" class="hover:text-champagneGold transition-colors">Pengalaman</a>
+                    <a href="mailto:hartono.eddy11@gmail.com" class="hover:text-champagneGold transition-colors inline-flex items-center gap-1.5">
+                        <i data-lucide="mail" class="w-3.5 h-3.5 text-champagneGold"></i>
+                        <span>hartono.eddy11@gmail.com</span>
+                    </a>
+                    <a href="https://mengball.my.id" target="_blank" rel="noopener noreferrer" class="hover:text-champagneGold transition-colors inline-flex items-center gap-1.5">
+                        <i data-lucide="globe" class="w-3.5 h-3.5 text-champagneGold"></i>
+                        <span>mengball.my.id</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP DETAIL STUDI KASUS (Tantangan, Proses, Hasil) -->
+    <div id="case-study-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6">
+        <!-- Backdrop -->
+        <div id="modal-backdrop" class="fixed inset-0 bg-abyssalNavy/85 backdrop-blur-sm modal-backdrop"></div>
+        
+        <!-- Modal Box -->
+        <div class="relative bg-pearlWhite w-full max-w-2xl rounded-2xl shadow-2xl border border-champagneGold/40 overflow-hidden z-10 max-h-[90vh] flex flex-col modal-content">
+            <!-- Header Modal (Abyssal Navy) -->
+            <div class="bg-abyssalNavy text-white px-6 py-5 flex items-start justify-between gap-4 border-b border-deepSlate">
+                <div>
+                    <span id="modal-category" class="inline-block px-3 py-1 rounded-lg bg-champagneGold text-abyssalNavy text-xs font-bold mb-2">
+                        Kategori
+                    </span>
+                    <h3 id="modal-title" class="text-xl sm:text-2xl font-extrabold leading-snug text-white">
+                        Judul Studi Kasus
+                    </h3>
+                </div>
+                <button id="close-modal-btn" aria-label="Tutup Modal" class="p-2 rounded-xl bg-deepSlate text-slate-200 hover:text-champagneGold transition-colors shrink-0">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Grid Kartu Proyek (Deep Slate Blue #172A45) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8" id="projects-grid">
+
+                <!-- PROYEK 1: Kampanye Edukasi K3 Kreatif & Tema GTA VI -->
+                <article data-category="k3" data-project-id="0" class="project-card cursor-pointer bg-deepSlate rounded-2xl border border-champagneGold/25 overflow-hidden shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-abyssalNavy via-deepSlate to-abyssalNavy p-6 flex flex-col justify-between border-b border-champagneGold/15 relative overflow-hidden">
+                            <div class="flex items-center justify-between z-10">
+                                <span class="px-3 py-1 rounded-lg bg-champagneGold text-abyssalNavy text-xs font-bold">
+                                    Konten &amp; Desain K3
+                                </span>
+                                <span class="text-xs font-medium text-slate-300 bg-abyssalNavy/80 px-2.5 py-1 rounded-md border border-champagneGold/20">
+                                    Balai K3 Makassar
+                                </span>
+                            </div>
+                            <div class="z-10 flex items-end justify-between">
+                                <div>
+                                    <p class="text-xs text-champagneGold font-semibold uppercase tracking-wider">Kampanye Pop-Culture</p>
+                                    <p class="font-heading font-bold text-lg text-white mt-0.5">Edukasi K3 Tema GTA VI</p>
+                                </div>
+                                <div class="w-11 h-11 rounded-xl bg-champagneGold/15 border border-champagneGold/40 flex items-center justify-center text-champagneGold group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-champagneGold transition-colors">
+                                Kampanye Edukasi K3 Kreatif &amp; Tema GTA VI (Balai K3 Makassar)
+                            </h3>
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                <p><strong class="text-champagneGold">Tantangan:</strong> Pesan keselamatan kerja kerap terasa kaku dan kurang menarik minat pekerja muda di media sosial.</p>
+                                <p><strong class="text-white">Proses:</strong> Mengadaptasi visual budaya pop GTA VI ke desain poster &amp; video edukasi dengan tetap menjaga akurasi standar K3.</p>
+                                <p><strong class="text-white">Hasil:</strong> Meningkatkan daya tarik visual, jangkauan organik, dan keterlibatan audiens kanal publik Balai K3 Makassar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2">
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Canva Pro</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">CapCut</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Content Strategy</span>
+                        </div>
+                        <div class="pt-3 border-t border-abyssalNavy/70 flex items-center justify-between text-sm font-bold text-champagneGold">
+                            <span>Buka Detail Studi Kasus</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYEK 2: Branding Digital, Landing Page & Sistem Order UMKM Meng Ball -->
+                <article data-category="umkm" data-project-id="1" class="project-card cursor-pointer bg-deepSlate rounded-2xl border border-champagneGold/25 overflow-hidden shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-abyssalNavy via-deepSlate to-abyssalNavy p-6 flex flex-col justify-between border-b border-champagneGold/15 relative overflow-hidden">
+                            <div class="flex items-center justify-between z-10">
+                                <span class="px-3 py-1 rounded-lg bg-champagneGold text-abyssalNavy text-xs font-bold">
+                                    Digital &amp; UMKM
+                                </span>
+                                <span class="text-xs font-medium text-slate-300 bg-abyssalNavy/80 px-2.5 py-1 rounded-md border border-champagneGold/20">
+                                    mengball.my.id
+                                </span>
+                            </div>
+                            <div class="z-10 flex items-end justify-between">
+                                <div>
+                                    <p class="text-xs text-champagneGold font-semibold uppercase tracking-wider">Identitas Lokal &amp; Otomasi</p>
+                                    <p class="font-heading font-bold text-lg text-white mt-0.5">UMKM Meng Ball Pangkep</p>
+                                </div>
+                                <div class="w-11 h-11 rounded-xl bg-champagneGold/15 border border-champagneGold/40 flex items-center justify-center text-champagneGold group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-store text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-champagneGold transition-colors">
+                                Branding Digital, Landing Page &amp; Sistem Order UMKM Meng Ball (mengball.my.id)
+                            </h3>
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                <p><strong class="text-champagneGold">Tantangan:</strong> Produk bakso ikan bandeng tanpa duri khas Pangkep memerlukan identitas merek kuat dan pencatatan pesanan otomatis.</p>
+                                <p><strong class="text-white">Proses:</strong> Merancang branding motif lokal Boledong, membangun landing page responsif, dan otomasi order Google Sheets &amp; n8n.</p>
+                                <p><strong class="text-white">Hasil:</strong> Mempercepat alur transaksi pelanggan serta menertibkan rekapitulasi penjualan harian UMKM.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2">
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Landing Page</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Google Sheets &amp; Apps Script</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">n8n</span>
+                        </div>
+                        <div class="pt-3 border-t border-abyssalNavy/70 flex items-center justify-between text-sm font-bold text-champagneGold">
+                            <span>Buka Detail Studi Kasus</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYEK 3: Analisis Kelayakan Finansial Tambak Udang Vaname Intensif (Skripsi D4) -->
+                <article data-category="agribisnis" data-project-id="2" class="project-card cursor-pointer bg-deepSlate rounded-2xl border border-champagneGold/25 overflow-hidden shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-abyssalNavy via-deepSlate to-abyssalNavy p-6 flex flex-col justify-between border-b border-champagneGold/15 relative overflow-hidden">
+                            <div class="flex items-center justify-between z-10">
+                                <span class="px-3 py-1 rounded-lg bg-champagneGold text-abyssalNavy text-xs font-bold">
+                                    Agribisnis &amp; Riset
+                                </span>
+                                <span class="text-xs font-medium text-slate-300 bg-abyssalNavy/80 px-2.5 py-1 rounded-md border border-champagneGold/20">
+                                    Skripsi D4 (2026)
+                                </span>
+                            </div>
+                            <div class="z-10 flex items-end justify-between">
+                                <div>
+                                    <p class="text-xs text-champagneGold font-semibold uppercase tracking-wider">Evaluasi Keuangan &amp; Usaha</p>
+                                    <p class="font-heading font-bold text-lg text-white mt-0.5">Tambak Udang Vaname Intensif</p>
+                                </div>
+                                <div class="w-11 h-11 rounded-xl bg-champagneGold/15 border border-champagneGold/40 flex items-center justify-center text-champagneGold group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-chart-line text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-champagneGold transition-colors">
+                                Analisis Kelayakan Finansial Tambak Udang Vaname Intensif (Skripsi D4)
+                            </h3>
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                <p><strong class="text-champagneGold">Tantangan:</strong> Budidaya udang vaname sistem intensif memerlukan modal dan biaya operasional tinggi sehingga butuh evaluasi risiko terukur.</p>
+                                <p><strong class="text-white">Proses:</strong> Audit struktur biaya investasi, biaya operasional, proyeksi arus kas, dan indikator kelayakan usaha di CV. Putra Bahari Marina.</p>
+                                <p><strong class="text-white">Hasil:</strong> Menghasilkan rekomendasi objektif efisiensi biaya pakan/operasional serta kelayakan ekspansi tambak intensif.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2">
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Analisis Finansial</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Agribisnis Perikanan</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Microsoft Excel</span>
+                        </div>
+                        <div class="pt-3 border-t border-abyssalNavy/70 flex items-center justify-between text-sm font-bold text-champagneGold">
+                            <span>Buka Detail Studi Kasus</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROYEK 4: Tata Kelola Administrasi & Kesekretariatan Himpunan Mahasiswa Bisnis -->
+                <article data-category="agribisnis" data-project-id="3" class="project-card cursor-pointer bg-deepSlate rounded-2xl border border-champagneGold/25 overflow-hidden shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 bg-gradient-to-br from-abyssalNavy via-deepSlate to-abyssalNavy p-6 flex flex-col justify-between border-b border-champagneGold/15 relative overflow-hidden">
+                            <div class="flex items-center justify-between z-10">
+                                <span class="px-3 py-1 rounded-lg bg-champagneGold text-abyssalNavy text-xs font-bold">
+                                    Agribisnis &amp; Riset
+                                </span>
+                                <span class="text-xs font-medium text-slate-300 bg-abyssalNavy/80 px-2.5 py-1 rounded-md border border-champagneGold/20">
+                                    Politani Pangkep
+                                </span>
+                            </div>
+                            <div class="z-10 flex items-end justify-between">
+                                <div>
+                                    <p class="text-xs text-champagneGold font-semibold uppercase tracking-wider">Kesekretariatan Organisasi</p>
+                                    <p class="font-heading font-bold text-lg text-white mt-0.5">Tata Kelola Administrasi &amp; LPJ</p>
+                                </div>
+                                <div class="w-11 h-11 rounded-xl bg-champagneGold/15 border border-champagneGold/40 flex items-center justify-center text-champagneGold group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-folder-tree text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white group-hover:text-champagneGold transition-colors">
+                                Standardisasi Tata Kelola Administrasi &amp; Database Himpunan Mahasiswa Bisnis
+                            </h3>
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                <p><strong class="text-champagneGold">Tantangan:</strong> Kebutuhan alur persuratan resmi, pengarsipan dokumen, dan pelaporan kegiatan organisasi agar tertib serta mudah ditelusuri.</p>
+                                <p><strong class="text-white">Proses:</strong> Menyusun format surat resmi, pengarsipan database anggota digital, notulensi rapat, dan pedoman penyusunan proposal/LPJ.</p>
+                                <p><strong class="text-white">Hasil:</strong> Mempercepat distribusi informasi internal dan meningkatkan ketertiban administrasi Himpunan Mahasiswa Bisnis.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-2">
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Kesekretariatan</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Microsoft Office</span>
+                            <span class="px-2.5 py-1 rounded-md bg-abyssalNavy/80 text-slate-200 border border-champagneGold/20 text-xs font-medium">Pengarsipan Digital</span>
+                        </div>
+                        <div class="pt-3 border-t border-abyssalNavy/70 flex items-center justify-between text-sm font-bold text-champagneGold">
+                            <span>Buka Detail Studi Kasus</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PENGALAMAN KERJA, ORGANISASI, PENDIDIKAN & SERTIFIKASI (Pearl Off-White #F8F9FA + Charcoal Ink #1E293B) -->
+    <section id="pengalaman" class="py-20 sm:py-28 bg-pearlWhite text-charcoalInk">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-champagneGold">Rekam Jejak Profesional</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-abyssalNavy mt-2">
+                    Pengalaman Kerja, Organisasi &amp; Pendidikan
+                </h2>
+                <div class="w-16 h-1 bg-champagneGold rounded-full mx-auto mt-4"></div>
+                <p class="text-charcoalInk/80 text-base mt-4">
+                    Perjalanan kontribusi profesional, kepemimpinan organisasi kemahasiswaan, kewirausahaan UMKM di Pangkep, serta kualifikasi akademik dan sertifikasi nasional.
+                </p>
+            </div>
+
+            <!-- Timeline Container dengan Garis & Ikon Champagne Gold -->
+            <div class="relative border-l-2 border-champagneGold ml-3 sm:ml-6 space-y-8">
+
+                <!-- 1. Magang / On-the-Job Training (OJT) — Balai K3 Makassar -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Magang / On-the-Job Training (OJT)
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">2026</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Digital Content Creator &amp; Social Media Intern
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Balai Keselamatan dan Kesehatan Kerja (Balai K3) Makassar — Program Magang Hub
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Bertanggung jawab dalam produksi konten digital, perencanaan konten mingguan, perancangan poster edukasi K3 kreatif (termasuk adaptasi visual budaya populer seperti GTA VI), serta penguatan komunikasi publik keselamatan dan kesehatan kerja.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. Founder & Pengelola UMKM — Meng Ball -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Kewirausahaan UMKM
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">2026</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Founder &amp; Pengelola UMKM — Meng Ball
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Pangkep, Sulawesi Selatan (mengball.my.id)
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Mengembangkan produk bakso ikan bandeng tanpa duri berbasis kearifan lokal Pangkep, membangun identitas branding digital (<a href="https://mengball.my.id" target="_blank" rel="noopener noreferrer" class="underline decoration-champagneGold font-semibold text-abyssalNavy hover:text-champagneGold">mengball.my.id</a>), serta mengimplementasikan otomatisasi pencatatan pesanan berbasis Google Sheets dan n8n.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. Pengurus Aktif — Bidang Kesekretariatan | Himpunan Mahasiswa Bisnis -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Organisasi Kemahasiswaan
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">2025 – 2026</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Pengurus Aktif — Bidang Kesekretariatan | Himpunan Mahasiswa Bisnis
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Politeknik Pertanian Negeri Pangkajene Kepulauan (Politani Pangkep)
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Bertanggung jawab atas tata kelola administrasi organisasi, penyusunan dan pengarsipan surat-menyurat resmi, notulensi rapat, pengarsipan database anggota, penyusunan proposal serta Laporan Pertanggungjawaban (LPJ) kegiatan, dan koordinasi jadwal agenda internal.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. Pengurus / Anggota Aktif | Racana Kastratara -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Kepramukaan Perguruan Tinggi
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">Politani Pangkep</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Pengurus / Anggota Aktif | Racana Kastratara
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Gerakan Pramuka Perguruan Tinggi — Politani Pangkep
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Mengelola program kepramukaan perguruan tinggi, kepemimpinan lapangan, kedisiplinan tim, manajemen kegiatan keorganisasian, serta pelaksanaan program pengabdian masyarakat.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. Delegasi / Pengurus Aktif | FKMPI -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Jejaring Nasional Vokasi
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">Regional &amp; Nasional</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                            Delegasi / Pengurus Aktif | FKMPI
+                        </h3>
+                        <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                            Forum Komunikasi Mahasiswa Politeknik se-Indonesia
+                        </p>
+                        <p class="text-charcoalInk text-sm sm:text-base mt-3 leading-relaxed">
+                            Berperan dalam jaringan komunikasi dan koordinasi antar-politeknik tingkat regional maupun nasional, forum diskusi kebijakan pendidikan vokasi, serta representasi aspirasi mahasiswa politeknik.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6. Pendidikan & Sertifikasi Kompetensi -->
+                <div class="relative pl-8 sm:pl-10">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-champagneGold ring-4 ring-pearlWhite"></span>
+                    <div class="bg-white p-6 rounded-2xl border border-deepSlate/15 hover:border-champagneGold transition-colors shadow-sm space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="px-3 py-1 rounded-full bg-abyssalNavy text-champagneGold text-xs font-bold">
+                                Pendidikan &amp; Sertifikasi Resmi
+                            </span>
+                            <span class="text-xs font-semibold text-charcoalInk/70">Lulus 2026</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-bold text-abyssalNavy">
+                                Sarjana Terapan (D4) Agribisnis Perikanan
+                            </h3>
+                            <p class="text-sm font-semibold text-champagneGold mt-0.5">
+                                Politeknik Pertanian Negeri Pangkajene Kepulauan (Politani Pangkep) • Lulus 2026
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-deepSlate/10 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                            <div class="p-3 rounded-xl bg-pearlWhite border border-deepSlate/10">
+                                <p class="font-bold text-abyssalNavy"><i class="fa-solid fa-certificate text-champagneGold mr-1.5"></i>Sertifikasi Kompetensi BNSP</p>
+                                <p class="text-xs text-charcoalInk/80 mt-1">Kompetensi Kepabeanan, Dokumen PEB/PIB &amp; Ekspor-Impor (Badan Nasional Sertifikasi Profesi).</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-pearlWhite border border-deepSlate/10">
+                                <p class="font-bold text-abyssalNavy"><i class="fa-solid fa-robot text-champagneGold mr-1.5"></i>Pelatihan Generative AI</p>
+                                <p class="text-xs text-charcoalInk/80 mt-1">Balai Besar Pelatihan Vokasi dan Produktivitas (BBPVP) Makassar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER & FORMULIR KONTAK (Abyssal Navy #0A192F + Kartu Form Deep Slate Blue #172A45 + Tombol Submit Champagne Gold #C5A059) -->
+    <footer id="kontak" class="bg-abyssalNavy text-white pt-20 pb-12 border-t border-deepSlate">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-deepSlate">
+                
+                <!-- Kolom Kiri: Info Kontak (WhatsApp, Email, Domisili Pangkep, Sulawesi Selatan) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-champagneGold">Hubungi Saya</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 leading-tight">
+                            Mari Wujudkan Kolaborasi Terbaik.
+                        </h2>
+                        <div class="w-16 h-1 bg-champagneGold rounded-full mt-4"></div>
+                    </div>
+
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Silakan hubungi saya untuk diskusi peluang karier penuh waktu (<span class="text-white font-semibold">full-time</span>), pembuatan kampanye konten visual, administrasi operasional, maupun pengembangan landing page dan otomasi bisnis UMKM.
+                    </p>
+
+                    <!-- Daftar Kontak Langsung -->
+                    <div class="space-y-3.5 pt-2">
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/6285956700561?text=Halo%20Eddy%2C%20saya%20melihat%20portofolio%20web%20Anda%20dan%20ingin%20berdiskusi." target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-deepSlate border border-champagneGold/25 hover:border-champagneGold transition-all group">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">WhatsApp</p>
+                                <p class="text-sm sm:text-base font-bold text-white group-hover:text-champagneGold transition-colors">+62 859-5670-0561</p>
+                            </div>
+                        </a>
+
+                        <!-- Email Profesional -->
+                        <a href="mailto:hartono.eddy11@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl bg-deepSlate border border-champagneGold/25 hover:border-champagneGold transition-all group">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Email Profesional</p>
+                                <p class="text-sm sm:text-base font-bold text-white group-hover:text-champagneGold transition-colors">hartono.eddy11@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <!-- Domisili -->
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-deepSlate border border-champagneGold/25">
+                            <div class="w-11 h-11 rounded-xl bg-abyssalNavy text-champagneGold flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Domisili</p>
+                                <p class="text-sm sm:text-base font-bold text-white">Pangkep, Sulawesi Selatan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Kartu Form Deep Slate Blue (#172A45) + Tombol Submit Champagne Gold (#C5A059) -->
+                <div class="lg:col-span-7">
+                    <div class="bg-deepSlate border border-champagneGold/30 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold text-white">Formulir Pesan &amp; Kolaborasi</h3>
+                            <p class="text-sm text-slate-300 mt-1">
+                                Pesan Anda akan langsung diarahkan ke email profesional <span class="text-champagneGold font-semibold">hartono.eddy11@gmail.com</span>.
+                            </p>
+                        </div>
+
+                        <!-- Notifikasi Pengiriman Sukses -->
+                        <div id="form-success-box" class="hidden mb-6 p-4 rounded-xl bg-abyssalNavy border border-champagneGold text-slate-200">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-champagneGold text-lg mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-sm text-champagneGold">Pesan Siap Dikirim ke hartono.eddy11@gmail.com!</p>
+                                    <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                                        Terima kasih telah menghubungi Eddy Hartono. Aplikasi email Anda telah dibuka dengan draf pesan otomatis, atau Anda dapat menyalin alamat <span class="text-white font-semibold">hartono.eddy11@gmail.com</span> secara langsung.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form -->
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="sender-name" class="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-2">Nama Lengkap / Instansi</label>
+                                    <input type="text" id="sender-name" name="nama" required placeholder="Contoh: Andi Pratama / PT Bahari" class="w-full px-4 py-3 rounded-xl bg-abyssalNavy border border-champagneGold/25 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-champagneGold transition-colors">
+                                </div>
+                                <div>
+                                    <label for="sender-contact" class="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-2">Email atau Nomor WhatsApp</label>
+                                    <input type="text" id="sender-contact" name="kontak" required placeholder="Contoh: andi@email.com / 0812..." class="w-full px-4 py-3 rounded-xl bg-abyssalNavy border border-champagneGold/25 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-champagneGold transition-colors">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="sender-topic" class="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-2">Keperluan</label>
+                                <select id="sender-topic" name="topik" class="w-full px-4 py-3 rounded-xl bg-abyssalNavy border border-champagneGold/25 text-white text-sm focus:outline-none focus:border-champagneGold transition-colors">
+                                    <option value="Rekrutmen Full-Time">Rekrutmen Posisi Penuh Waktu (Full-Time)</option>
+                                    <option value="Konten & Desain K3 / Visual">Proyek Konten Digital &amp; Desain Visual</option>
+                                    <option value="Digital & UMKM / Landing Page">Branding UMKM, Landing Page &amp; Otomasi</option>
+                                    <option value="Agribisnis & Riset">Konsultasi &amp; Analisis Agribisnis Perikanan</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="sender-message" class="block text-xs font-semibold uppercase tracking-wider text-slate-200 mb-2">Pesan Detail</label>
+                                <textarea id="sender-message" name="pesan" rows="4" required placeholder="Tuliskan detail tawaran kerja, ruang lingkup proyek, atau jadwal diskusi..." class="w-full px-4 py-3 rounded-xl bg-abyssalNavy border border-champagneGold/25 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-champagneGold transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-champagneGold hover:brightness-110 text-abyssalNavy font-bold text-sm sm:text-base shadow-lg shadow-champagneGold/20 transition-all active:scale-95">
+                                <span>Kirim ke hartono.eddy11@gmail.com</span>
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright & Bottom Bar (Tanpa Instagram Meng Ball) -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-400">
+                <div class="flex items-center gap-2">
+                    <span class="font-heading font-extrabold text-white text-base">EH<span class="text-champagneGold">.</span></span>
+                    <span>&copy; 2026 Eddy Hartono — Pangkep, Sulawesi Selatan.</span>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-6">
+                    <a href="mailto:hartono.eddy11@gmail.com" class="hover:text-champagneGold transition-colors inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-envelope text-champagneGold"></i>
+                        <span>hartono.eddy11@gmail.com</span>
+                    </a>
+                    <a href="https://mengball.my.id" target="_blank" rel="noopener noreferrer" class="hover:text-champagneGold transition-colors inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-globe text-champagneGold"></i>
+                        <span>mengball.my.id</span>
+                    </a>
+                    <a href="#" class="hover:text-champagneGold transition-colors">Kembali ke Atas &uarr;</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP DETAIL STUDI KASUS (Tantangan, Proses, Hasil) -->
+    <div id="case-study-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6">
+        <!-- Backdrop -->
+        <div id="modal-backdrop" class="fixed inset-0 bg-abyssalNavy/85 backdrop-blur-sm modal-backdrop"></div>
+        
+        <!-- Modal Box -->
+        <div class="relative bg-pearlWhite w-full max-w-2xl rounded-2xl shadow-2xl border border-champagneGold/40 overflow-hidden z-10 max-h-[90vh] flex flex-col modal-content">
+            <!-- Header Modal (Abyssal Navy) -->
+            <div class="bg-abyssalNavy text-white px-6 py-5 flex items-start justify-between gap-4 border-b border-deepSlate">
+                <div>
+                    <span id="modal-category" class="inline-block px-3 py-1 rounded-lg bg-champagneGold text-abyssalNavy text-xs font-bold mb-2">
+                        Kategori
+                    </span>
+                    <h3 id="modal-title" class="text-xl sm:text-2xl font-extrabold leading-snug text-white">
+                        Judul Studi Kasus
+                    </h3>
+                </div>
+                <button id="close-modal-btn" aria-label="Tutup Modal" class="p-2 rounded-xl bg-deepSlate text-slate-200 hover:text-champagneGold transition-colors shrink-0">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Isi Modal (Scrollable - Pearl Off-White & Charcoal Ink) -->
+            <div class="p-6 sm:p-8 overflow-y-auto space-y-5 text-charcoalInk">
+                <!-- 1. Tantangan -->
+                <div class="p-4 sm:p-5 rounded-xl bg-white border border-deepSlate/15">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-champagneGold mb-1.5 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-champagneGold"></span>
+                        1. Tantangan
+                    </h4>
+                    <p id="modal-challenge" class="text-sm sm:text-base text-charcoalInk leading-relaxed">
+                        Deskripsi tantangan...
+                    </p>
+                </div>
+
+                <!-- 2. Proses & Perangkat -->
+                <div class="p-4 sm:p-5 rounded-xl bg-white border border-deepSlate/15">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-abyssalNavy mb-1.5 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-abyssalNavy"></span>
+                        2. Proses &amp; Perangkat yang Digunakan
+                    </h4>
+                    <p id="modal-process" class="text-sm sm:text-base text-charcoalInk leading-relaxed mb-3">
+                        Deskripsi proses...
+                    </p>
+                    <div class="flex flex-wrap gap-1.5" id="modal-tools">
+                        <!-- Tools badges injected via JS -->
+                    </div>
+                </div>
+
+                <!-- 3. Hasil -->
+                <div class="p-4 sm:p-5 rounded-xl bg-abyssalNavy text-white border border-champagneGold/40">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-champagneGold mb-1.5 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-champagneGold"></span>
+                        3. Hasil &amp; Dampak
+                    </h4>
+                    <p id="modal-result" class="text-sm sm:text-base text-slate-200 leading-relaxed">
+                        Deskripsi hasil...
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Modal -->
+            <div class="px-6 py-4 bg-white border-t border-deepSlate/15 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <a id="modal-external-link" href="#" target="_blank" rel="noopener noreferrer" class="hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-champagneGold hover:brightness-110 text-abyssalNavy text-sm font-bold transition-all">
+                    <span>Kunjungi Situs Proyek</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+                <button id="modal-close-bottom" class="w-full sm:w-auto ml-auto px-5 py-2.5 rounded-xl bg-abyssalNavy hover:bg-deepSlate text-white text-sm font-semibold transition-colors">
+                    Tutup Detail
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT INTERAKTIF -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render seluruh ikon Lucide
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // 1. Data Lengkap Studi Kasus Utama
+            const caseStudies = [
+                {
+                    category: 'Konten & Desain K3',
+                    title: 'Kampanye Edukasi K3 Kreatif & Tema GTA VI (Balai K3 Makassar)',
+                    challenge: 'Edukasi Keselamatan dan Kesehatan Kerja (K3) sering kali dianggap kaku dan kurang diminati oleh audiens muda di media sosial, sehingga pesan pencegahan kecelakaan kerja sulit menjangkau demografi pekerja muda.',
+                    process: 'Selama Program Magang Hub (6 Bulan) di Balai K3 Makassar, saya merancang perencanaan konten K3 mingguan/bulanan, menulis naskah edukatif, mengoordinasikan PIC tim produksi, dan mengadaptasi gaya visual ikonik GTA VI ke dalam desain poster serta video edukasi tanpa mengurangi akurasi standar K3.',
+                    tools: ['Canva Pro', 'CapCut', 'Content Planning', 'Visual Storytelling'],
+                    result: 'Meningkatkan daya tarik visual serta keterlibatan audiens pada kanal informasi publik Balai K3 Makassar, menjadikan pesan keselamatan kerja lebih segar, mudah diingat, dan relevan.',
+                    link: ''
+                },
+                {
+                    category: 'Bisnis & Digital UMKM',
+                    title: 'Branding Digital, Landing Page & Sistem Order UMKM Meng Ball (mengball.my.id)',
+                    challenge: 'Produk bakso ikan bandeng tanpa duri khas Ma\'rang, Pangkep membutuhkan diferensiasi merek berbasis kearifan lokal agar menonjol di pasar sekaligus memerlukan alur pemesanan dan pencatatan order yang lebih rapi.',
+                    process: 'Merancang identitas visual merek dengan sentuhan motif lokal Boledong, membangun landing page responsif di mengball.my.id, mengintegrasikan pemesanan langsung, serta menyusun otomasi pencatatan pesanan ke Google Sheets dan n8n.',
+                    tools: ['Canva Pro', 'Landing Page', 'Google Sheets', 'n8n Automation'],
+                    result: 'Terbangunnya identitas merek UMKM lokal Pangkep yang profesional dan siap bersaing secara digital, mempercepat proses transaksi pelanggan, serta mempermudah rekapitulasi pesanan harian.',
+                    link: 'https://mengball.my.id'
+                },
+                {
+                    category: 'Riset Agribisnis',
+                    title: 'Analisis Kelayakan Finansial Tambak Udang Vaname Intensif (Skripsi D4)',
+                    challenge: 'Budidaya udang vaname sistem intensif membutuhkan investasi modal dan biaya operasional yang besar, sehingga diperlukan evaluasi kelayakan finansial yang terukur untuk meminimalkan risiko kerugian.',
+                    process: 'Melakukan pengumpulan data lapangan di CV. Putra Bahari Marina, Probolinggo, mencakup struktur biaya investasi, biaya tetap dan variabel, proyeksi arus kas, serta perhitungan indikator kelayakan finansial usaha.',
+                    tools: ['Analisis Kelayakan Finansial', 'Agribisnis Perikanan', 'Microsoft Excel', 'Riset Lapangan'],
+                    result: 'Menghasilkan kajian komprehensif kelayakan finansial budidaya udang vaname intensif yang menjadi dasar objektif dalam evaluasi efisiensi biaya dan pengambilan keputusan pengembangan usaha.',
+                    link: ''
+                },
+                {
+                    category: 'Konten & Desain K3',
+                    title: 'Implementasi Workflow Generative AI untuk Produksi Konten Digital & Bisnis',
+                    challenge: 'Kebutuhan produksi aset visual kampanye, naskah edukatif, serta sulih suara (voiceover) berkualitas profesional dalam tenggat waktu yang padat pada proyek digital maupun UMKM.',
+                    process: 'Mengintegrasikan teknik prompt engineering visual, generasi narasi audio realistis menggunakan ElevenLabs, serta penyuntingan video dinamis selama mengikuti pelatihan vokasi dan OJT Program BBPVP Makassar.',
+                    tools: ['Google AI Studio', 'ElevenLabs Voiceover', 'CapCut', 'Prompt Engineering'],
+                    result: 'Mempercepat alur produksi konten multimedia secara signifikan sekaligus menjaga kualitas estetika visual dan kejelasan narasi pesan digital.',
+                    link: ''
+                }
+            ];
+            // 5. Fitur Salin Email Cepat (menggunakan document.execCommand('copy') agar kompatibel iFrame)
+            const copyEmailBtn = document.getElementById('copy-email-btn');
+            const copyEmailText = document.getElementById('copy-email-text');
+
+            if (copyEmailBtn) {
+                copyEmailBtn.addEventListener('click', () => {
+                    const tempInput = document.createElement('input');
+                    tempInput.value = 'hartono.eddy11@gmail.com';
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    tempInput.setSelectionRange(0, 99999);
+                    try {
+                        document.execCommand('copy');
+                        copyEmailText.textContent = 'Tersalin!';
+                        setTimeout(() => {
+                            copyEmailText.textContent = 'Salin';
+                        }, 2200);
+                    } catch (err) {
+                        copyEmailText.textContent = 'hartono.eddy11@gmail.com';
+                    }
+                    document.body.removeChild(tempInput);
+                });
+            }
+
+            // 6. Penanganan Formulir Kontak langsung ke hartono.eddy11@gmail.com
+            const contactForm = document.getElementById('contact-form');
+            const successBox = document.getElementById('form-success-box');
+            const submitBtn = document.getElementById('submit-btn');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const nama = document.getElementById('sender-name').value.trim();
+                const kontak = document.getElementById('sender-contact').value.trim();
+                const topik = document.getElementById('sender-topic').value;
+                const pesan = document.getElementById('sender-message').value.trim();
+
+                const originalBtnHTML = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>Menyiapkan Email...</span>';
+
+                const subject = encodeURIComponent(`[Portofolio Web] ${topik} — ${nama}`);
+                const body = encodeURIComponent(
+                    `Halo Eddy Hartono,\n\n` +
+                    `Saya menghubungi Anda melalui website portofolio profesional.\n\n` +
+                    `Nama / Instansi : ${nama}\n` +
+                    `Kontak Balik    : ${kontak}\n` +
+                    `Keperluan       : ${topik}\n\n` +
+                    `Detail Pesan:\n${pesan}\n\n` +
+                    `Salam,\n${nama}`
+                );
+
+                // Buka mailto langsung ke hartono.eddy11@gmail.com
+                window.location.href = `mailto:hartono.eddy11@gmail.com?subject=${subject}&body=${body}`;
+
+                setTimeout(() => {
+                    successBox.classList.remove('hidden');
+                    contactForm.reset();
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHTML;
+                }, 400);
+            });
+        });
+    </script>
+</body>
+</html>
